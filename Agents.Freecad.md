@@ -8,6 +8,7 @@ emphasis on clarity, stability, and maintainable parametric models.
 - Use verbose, descriptive parameter names; avoid ambiguous abbreviations.
 - Separate data (parameters) from geometry construction.
 - Make models deterministic and easy to rebuild.
+- Break models into discrete parts when possible for clarity and reuse.
 
 ## Parameter Management (Spreadsheet First)
 - Always use a `Spreadsheet::Sheet` for user-facing parameters when possible.

@@ -10,6 +10,7 @@ parametric model ideas. The focus is accuracy and efficacy: less is more.
 - Validate definitions and units; avoid ambiguity.
 - Treat the parameter schema as the single source of truth.
 - Separate requirements from implementation details.
+- Break models into discrete parts when possible for clarity and reuse.
 
 ## Documentation Focus
 - Capture the core objective in one sentence.
