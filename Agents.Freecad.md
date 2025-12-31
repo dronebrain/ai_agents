@@ -15,7 +15,13 @@ emphasis on clarity, stability, and maintainable parametric models.
 - Define spreadsheet aliases with verbose names and use them in expressions.
 - Link feature dimensions to spreadsheet aliases, not hard-coded numbers.
 - Keep units explicit in spreadsheet cells (e.g., mm, deg, cm) where supported.
+- Set each parameter cell with an explicit unit default (e.g., `=4 in`).
 - Document parameter intent in spreadsheet comments for quick audits.
+
+## Spreadsheet Pitfalls
+- Prefer `sheet.set("A1", "=...")` for formulas; `setExpression()` can fail with missing properties.
+- Use valid alias names (letters/underscores); invalid aliases raise errors.
+- `setComment()` is not always available; fall back to a comment column when needed.
 
 ## Properties and Naming
 - Use long, readable variable and alias names (e.g., `wall_thickness_mm`).
@@ -41,11 +47,13 @@ emphasis on clarity, stability, and maintainable parametric models.
 - Keep core generation logic in `App` and avoid `Gui` dependencies.
 - Isolate view or selection logic behind optional GUI-only helpers.
 - Ensure modules can run under `FreeCADCmd` for automation.
+- Apply view changes only in assembly scripts and guard with `if App.GuiUp`.
 
 ## Robustness and Debuggability
 - Validate shapes when debugging complex operations.
 - Prefer clear error messages over silent fallbacks.
 - Keep boolean operations minimal and isolated if required.
+- Expect module caching; remove/hide obsolete objects or rebuild a fresh document after topology changes.
 
 ## API Usage Conventions
 - Use `import FreeCAD as App` and explicit module imports (`Part`, `Sketcher`,

@@ -8,6 +8,7 @@ parametric model ideas. The focus is accuracy and efficacy: less is more.
 - Prefer concise documentation over exhaustive prose.
 - Make missing information explicit and request it.
 - Validate definitions and units; avoid ambiguity.
+- Disambiguate plan vs elevation for shape descriptions (e.g., "L-shape").
 - Treat the parameter schema as the single source of truth.
 - Separate requirements from implementation details.
 - Break models into discrete parts when possible for clarity and reuse.
@@ -15,6 +16,7 @@ parametric model ideas. The focus is accuracy and efficacy: less is more.
 ## Documentation Focus
 - Capture the core objective in one sentence.
 - List only essential parameters with clear names and units.
+- Define default values for every dimension and state the unit system (mm/in).
 - Define constraints and tolerances explicitly.
 - Note required interfaces, references, and dependencies.
 - Define datums and coordinate system assumptions up front.
@@ -32,9 +34,12 @@ parametric model ideas. The focus is accuracy and efficacy: less is more.
 - What are the critical dimensions and their tolerances?
 - What parameters are fixed vs variable?
 - What units and coordinate system apply?
+- Which axes each major feature runs along (e.g., front leg along Y vs X)?
+- Are heights measured to bottom, top, or center, and from which datum?
 - What constraints or manufacturing limits must be respected?
 - What materials, loads, and environments drive the constraints?
 - What interfaces or mating parts must be honored?
+- Do any dimensions depend on other models (e.g., "top aligns to table top")?
 - What is the intended validation method and success criteria?
 
 ## Refinement Prompts (Always Suggest)
